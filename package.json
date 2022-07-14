@@ -1,0 +1,51 @@
+{
+    "name": "nyx-snippets",
+    "displayName": "Nyx Snippets",
+    "description": "A simple extension used for snippets . Supported languages :- Python and HTML and more",
+    "version": "0.0.3",
+    "engines": {
+        "vscode": "^1.69.0"
+    },
+    "publisher": "SriVamsiRajesh",
+    "author": {
+      "name": "Sri Vamsi Rajesh"
+    },
+    "icon": "images/logo.png",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/SrivamsiRajesh/Nyx-snippets"
+    },
+    "License": "GPLv3",
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "html",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "python",
+                "path": "./snippets/pySnippets.code-snippets"
+              },
+              {
+                "language": "python",
+                "path": "./snippets/discordpySnippets.code-snippets"
+              },
+              {
+                "language": "javascript",
+                "path": "./snippets/discordjsSnippets.code-snippets"
+              },
+              {
+                "language": "javascript",
+                "path": "./snippets/jsSnippets.code-snippets"
+              },
+              {
+                "language": "css",
+                "path": "./snippets/cssSnippets.code-snippets"
+              }
+            
+        ]
+    }
+}
