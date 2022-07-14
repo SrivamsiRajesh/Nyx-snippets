@@ -1,0 +1,103 @@
+{
+    "function is js": {
+        "prefix": "js.f",
+        "body": [
+            "",
+            "function is(a, b) {",
+            "    return a === b;",
+            "}",
+            "",
+            "console.log(is(1, 1));",
+            "console.log(is(1, 2));",
+            "",
+        ],
+        "description": "A function in Javascript that checks if two values are equal"
+      },
+      "variable in Js": {
+        "prefix": "js.var",
+        "body": [
+            "",
+            "var name = \"John\";",
+            "",
+            "console.log(name);",
+            "",
+        ],
+        "description": "A variable in Javascript"
+      },
+      "Constant in Js": {
+        "prefix": "js.const",
+        "body": [
+            "",
+            "const PI = 3.14;",
+            "",
+            "console.log(PI);",
+            "",
+        ],
+        "description": "A contstant in Javascript"
+      },
+      "While loop in Js": {
+        "prefix": "js.while",
+        "body": [
+            "",
+            "var i = 0;",
+            "",
+            "while (i < 5) {",
+            "    console.log(i);",
+            "    i++;",
+            "}",
+            "",
+        ],
+        "description": "A contstant in Javascript"
+      },
+        "For loop in Js": {
+            "prefix": "js.for",
+            "body": [
+                "",
+                "var items = [\"BLUE\", \"RED\", \"YELLOW\"];",
+                "",
+                "for (var item in items) {",
+                "    console.log(item);",
+                "}",
+                "",
+            ],
+            "description": "A for loop in Javascript"
+        },
+        "Clear Internal in Js": {
+            "prefix": "js.cli",
+            "body": [
+                "",
+                "clear();",
+                "",
+            ],
+            "description": "Clear internal in Javascript"
+        },
+        "Console log in Js": {
+            "prefix": "js.cl",
+            "body": [
+                "",
+                "console.log(\"Hello World\");",
+                "",
+            ],
+            "description": "Console Log in Javascript"
+        },
+        "Console warn in Js": {
+            "prefix": "js.cwarn",
+            "body": [
+                "",
+                "console.warn(\"Hello World\");",
+                "",
+            ],
+            "description": "Console warn in Javascript"
+        },
+        "Console error in Js": {
+            "prefix": "js.cerror",
+            "body": [
+                "",
+                "console.error(\"Hello World\");",
+                "",
+            ],
+            "description": "Console error in Javascript"
+        },
+      
+
+}

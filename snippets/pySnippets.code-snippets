@@ -1,0 +1,178 @@
+{
+    "A simple Hello world command 🌍": {
+        "prefix": "py.world",
+        "body": [
+            "print('Hello world')"
+        ],
+        "description": "Prints Hello World 🌍"
+      },
+      "Python Main": {
+        "prefix": "py.main",
+        "body": [
+            "if __name__== '__main__':",
+            "main()"
+        ],
+        "description": "Python main"
+      },
+        "Python class": {
+            "prefix": "py.class",
+            "body": [
+                "class Person:",
+                "if __name__== '__main__':",
+                  "self.name = name",
+                  "self.age = age",
+              
+             "p1 = Person('name', 21)",
+              
+              "print(p1.name)",
+              "print(p1.age)"
+              
+            ],
+            "description": "Prints class with name and age"
+        },
+        "pyif": {
+          "prefix": "py.if",
+          "body": [
+            "${1:arg1}: ${2|str,int,bool,dict,list,tuple|} = ${3:None}",
+            "${4:arg2}: $2 = $3",
+            "\r",
+            "if $1 == $2:",
+            "\tprint(\"Equal\")",
+            "elif $1 >= $2:",
+            "\tprint(f\"{$1} greater than {$4}\")",
+            "else:",
+            "\tprint(f\"{$4} greater than {$1}\")",
+            ""
+          ],
+          "description": "Python If Statement"
+        },
+        "pyfor": {
+          "prefix": "py.for",
+          "body": [
+            "items = [\"BLUE\", \"RED\", \"YELLOW\"]",
+            "",
+            "for ${1:item} in ${2:items}:",
+            "\tprint($1)",
+            ""
+          ],
+          "description": "For loop in python"
+        },
+        "pywhile": {
+          "prefix": "py.while",
+          "body": [
+            "${1:i} = ${2:0}",
+            "",
+            "while $1 in range(${3:5}):",
+            "\tprint($1)",
+            "\t$1 += ${4:1}",
+            ""
+          ],
+          "description": "While loop in python"
+        },
+        "pytry": {
+          "prefix": "py.try",
+          "body": [
+            "${1:TEST_VALUE} = ${2:None}",
+            "",
+            "try:",
+            "\tprint(\"Inside Try Block\")",
+            "\tif $1 is None:",
+            "\t\traise ValueError(\"$1 cannot be None\")",
+            "except ValueError as ${3:ex}:",
+            "\tprint(\"Inside Catch Block\")",
+            "\tprint($3)",
+            "finally:",
+            "\tprint(\"Inside Finally Block\")",
+            ""
+          ],
+          "description": "Python Try Catch Block"
+        },
+        "pyfunc": {
+          "prefix": "py.func",
+          "body": [
+            "def function_name(${1:arg}: ${2|str,int,bool,dict,list,tuple|} = None) -> ${3|True,False|}:",
+            "\t$BLOCK_COMMENT_START",
+            "\tFunction Description here",
+            "",
+            "\tParameters",
+            "\t----------",
+            "\t$1 ($2) : Parameter Description",
+            "",
+            "\tReturns",
+            "\t-------",
+            "\t$3 : Return Item Description",
+            "",
+            "\tRaises",
+            "\t------",
+            "\tValueError",
+            "\t\tIf the value of $1 is None",
+            "",
+            "\t$BLOCK_COMMENT_END",
+            "\tif $1 is None:",
+            "\t\traise ValueError(\"$1 cannot be None\")",
+            "",
+            "\tprint($1)",
+            "\treturn $3",
+            ""			
+          ],
+          "description": "Python function with one arguments"
+        },
+        "pylambda": {
+          "prefix": "py.lambda",
+          "body": [
+            "my_lambda_expression = lambda ${1:arg}: $1 + 1",
+            ""
+          ],
+          "description": "Lambda Function in python"
+        },	
+        "pyenv": {
+          "prefix": "py.env",
+          "body": [
+            "$BLOCK_COMMENT_START",
+            "This is a config module which gets the environment variables",
+            "$BLOCK_COMMENT_END",
+            "import os",
+            "",
+            "${1/(.*)/${1:/downcase}/} = os.getenv(\"${1/(.*)/${1:/upcase}/}\", None)",
+            ""
+          ],
+          "description": "Using Environment Variables in Python"
+        },
+        "pyenvar": {
+          "prefix": "py.envvariables",
+          "body": [
+            "${1/(.*)/${1:/downcase}/} = os.getenv(\"${1/(.*)/${1:/upcase}/}\", None)"
+          ],
+          "description": "Using Environment Variables in Python"
+        },
+        "pyclfunc": {
+          "prefix": "py.clfunc",
+          "body": [
+            "def function_name(self, ${1:arg}: ${2|str,int,bool,dict,list,tuple|} = None) -> ${3|True,False|}:",
+            "\t$BLOCK_COMMENT_START",
+            "\tFunction Description here",
+            "",
+            "\tParameters",
+            "\t----------",
+            "\t$1 ($2) : Parameter Description",
+            "",
+            "\tReturns",
+            "\t-------",
+            "\t$3 : Return Item Description",
+            "",
+            "\tRaises",
+            "\t------",
+            "\tValueError",
+            "\t\tIf the value of $1 is None",
+            "",
+            "\t$BLOCK_COMMENT_END",
+            "\tif self.$1 != $1:",
+            "\t\traise ValueError(\"$1 is not equal to the object's $1 value\")",
+            "",
+            "\tprint($1)",
+            "\treturn $3",
+            ""
+          ],
+          "description": "Class Function in Python"
+        }
+       }

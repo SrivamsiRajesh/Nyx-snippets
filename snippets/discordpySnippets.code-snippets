@@ -1,0 +1,162 @@
+{
+    "Default main.py": {
+        "prefix": ["dpy.index", "dpy.main", "dpy.bot", "dpy.client"],
+        "body": [
+            "import discord",
+            "from discord.ext import commands",
+            "import json",
+            "intents = discord.Intents.default()",
+            "intents.message_content = True",
+            "bot = commands.Bot(command_prefix='+', intents=intents)",
+            "",
+            "@bot.event",
+            "async def on_ready():",
+               "\tawait bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name='+help for help'))",
+           "print('Bot is online and ready sir')",
+           "",
+            "bot.run(token)"
+            
+        ],
+        "description": "Prints the default main.py file for discord.py without cogs"
+      },
+      "main.py with cogs": {
+        "prefix": ["dpy.indexc", "dpy.mainc", "dpy.botc", "dpy.clientc"],
+        "body": [
+            "import discord",
+            "from discord.ext import commands",
+            "import json",
+            "intents = discord.Intents.default()",
+            "intents.message_content = True",
+            "bot = commands.Bot(command_prefix='>', intents=intents)",
+            "",
+            "@bot.event",
+            "async def on_ready():",
+               "\tawait bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name='+help for help'))",
+           "print('Bot is online and ready sir')",
+           "",
+           "#load cogs",
+            "initial_extensions = [",
+            "\t\"Cogs.help\",",
+            "\t\"Cogs.ping\"",
+            "]",
+            "",
+            "print(initial_extensions)",
+            "",
+            "if __name__ == '__main__':",
+            "\tfor extension in initial_extensions:",
+            "\t\ttry:",
+            "\t\t\tbot.load_extension(extension)",
+            "\t\texcept Exception as e:",
+            "\t\t\tprint(f\"Failed to load extension {extension}\")",
+            "",
+            "bot.run(token)"
+   
+            
+        ],
+        "description": "Prints the default main.py file for discord.py with cogs"
+      },
+    
+        
+      "Default Discord bot cog": {
+		"prefix": "dpy.cog",
+		"body": [
+			"from discord.ext import commands",
+
+"class Test(commands.Cog):",
+"\tdef __init__(self, bot):",
+		"\t\t\tself.bot = bot" ,
+	
+	"@\tcommands.Cog.listener()",
+	"async def on_ready(self):",
+		"# an example event with cogs",
+	
+	"\t@commands.command()",
+	"\tasync def command(self, ctx):",
+		"# an example command with cogs",
+
+"\t\tdef setup(bot):",
+	"\t\t\tbot.add_cog(Test(bot))",
+		],
+        "description": "Create a basic Discord cog."
+    },
+      
+    "A simple embed": {
+		"prefix": "dpy.embed",
+		"body": [
+            "",
+            "@bot.command()",
+"async def embed(ctx):",
+    "\tembed=discord.Embed(title='Sample Embed', url='https://github.com/SrivamsiRajesh', description='This is just a simple embed', color=0xFF5733)",
+    "\t\t\t\tawait ctx.send(embed=embed)"
+
+		],
+        "description": "Create a basic Discord embed."
+    },
+    "Deafult discord bot on_typing": {
+		"prefix": "dpy.typing",
+		"body": [
+            "",
+            "@${1|commands.Cog.listener(),bot.event|}",
+            "async def on_typing(self,",
+            "    channel:discord.text.Messageable,",
+            "    user:discord.Member|discord.User,",
+            "    when:datetime.datetime):"
+
+
+		],
+        "description": "Create a typing effect."
+    },
+    "Simple discord py ban command": {
+		"prefix": "dpy.ban",
+		"body": [
+            "",
+            "@bot.command()",
+"\t@commands.has_permissions(ban_members=True)",
+"async def ban(ctx, user: discord.Member, *, reason=None):",
+    "if not reason:",
+        "await user.ban()",
+        "await ctx.send(f'**{user}** has been banned for **no reason**')",
+    "else:",
+        "await user.ban(reason=reason)",
+        "await ctx.send(f'**{user}** has been banned for **{reason}**.')",
+
+
+		],
+        "description": "Prints a simple ban command."
+    },
+    "Simple discord py kick command": {
+		"prefix": "dpy.kick",
+		"body": [
+            "",
+            "@bot.command()",
+            "@commands.has_permissions(kick_members=True)",
+            "async def kick(ctx, user: discord.Member, *, reason=None):",
+                "if not reason:",
+                    "await user.kick()",
+                    "await ctx.send(f'**{user}** has been kicked for **no reason**.')",
+                "else:",
+                    "await user.kick(reason=reason)",
+                    "await ctx.send(f'**{user}** has been kicked for **{reason}**.')"
+
+
+		],
+        "description": "Kicks a user."
+    },
+    "Simple discord py avatar": {
+		"prefix": "dpy.ava",
+		"body": [
+            "",
+            "@bot.command()",
+            "async def avatar(ctx, avamember: discord.Member = None):",
+                "print(type(avamember))",
+                "print(avamember)",
+                "if avamember == None:",
+                    "avamember = ctx.author",
+                "userAvatarUrl = avamember.avatar_url",
+                "await ctx.send(userAvatarUrl)",
+
+
+		],
+        "description": "Gets the avatar of the user <prefix>avatar <user>."
+    },
+}

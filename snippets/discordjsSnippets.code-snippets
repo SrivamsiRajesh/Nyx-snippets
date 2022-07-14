@@ -1,0 +1,26 @@
+{
+    "Default main.py": {
+        "prefix": ["djs.index", "djs.main", "djs.bot", "djs.client"],
+        "body": [
+            
+            "const Discord = require('discord.js');",
+            "const config = require('./config.json');",
+            "const fs = require('fs');",
+            "",
+            "const client = new Client({ intents: [Intents.FLAGS.GUILDS] });",
+            "",
+            "client.once('ready', () => {",
+            "\tconsole.log(' Bot Ready!');",
+            "});",
+        ],
+        "description": "Prints the default main.py file for discord.js"
+      },
+        "Default config.json": {
+            "prefix": ["djs.config", "djs.json", "djs.token"],
+            "body": [
+                "{\n\t\"token\"; \"\"\n}",
+            ],
+            "description": "Prints the default config.json file for discord.js"
+        },
+    
+}
