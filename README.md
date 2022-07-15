@@ -1,8 +1,4 @@
 # Nyx Snippets
-https://img.shields.io/github/issues/SrivamsiRajesh/Nyx-snippets
-https://img.shields.io/github/forks/SrivamsiRajesh/Nyx-snippets
-https://img.shields.io/github/stars/SrivamsiRajesh/Nyx-snippets
-https://img.shields.io/github/license/SrivamsiRajesh/Nyx-snippets
 
 Code snippets to build discord Bots and more.
 
